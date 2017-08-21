@@ -1,4 +1,4 @@
-import Job from './job';
+import {Job} from './job';
 
 export interface Colonist {
             id: number;
@@ -7,4 +7,4 @@ export interface Colonist {
             age: number;
 }
 
-//This should be colonist.ts
+//This should be colonist.ts. ADD TO OTHER FILE, it used to be encounter
