@@ -7,4 +7,9 @@ export interface Colonist {
             age: number;
 }
 
-//This should be colonist.ts. ADD TO OTHER FILE, it used to be encounter
+export interface NewColonist {
+
+        name : string;
+        age : string;
+        job_id : string;
+}

@@ -12,8 +12,8 @@ import { ReportComponent } from './components/report/report.component';
 import {appRoutes} from './app.routes';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
-@NgModule({
-  declarations: [
+@NgModule({ //Below is the metadata, in arrays
+  declarations: [ //Here we define which of these arrays belong to this module
     AppComponent,
     WelcomeComponent,
     RegisterComponent,
@@ -21,12 +21,12 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     ReportComponent,
     NotfoundComponent
   ],
-  imports: [
-    BrowserModule, 
+  imports: [ //Here we define all external modules we want to apply to our declared modules
+    BrowserModule, //This should be included for all browser based apps, and it provides error handling
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], //For services
+  bootstrap: [AppComponent] //This defines the startup array of the application
 })
 export class AppModule { }
