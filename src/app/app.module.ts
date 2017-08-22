@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -24,7 +25,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
   imports: [ //Here we define all external modules we want to apply to our declared modules
     BrowserModule, //This should be included for all browser based apps, and it provides error handling
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    HttpModule // For pulling data from the server
+
   ],
   providers: [], //For services
   bootstrap: [AppComponent] //This defines the startup array of the application

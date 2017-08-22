@@ -8,8 +8,6 @@ import {EncountersComponent} from './components/encounters/encounters.component'
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 
-
-
         export const appRoutes: Routes = [
             {path: '', component: WelcomeComponent}, //Home page
             {path: 'register', component: RegisterComponent},
