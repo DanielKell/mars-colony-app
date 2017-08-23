@@ -1,0 +1,84 @@
+import { Component, OnInit } from '@angular/core';
+import { JobService } from '../../services/job'; //Grab list of jobs to autopopulate options when registering a new colonist
+import { ColonistService } from '../../services/colonist';
+
+@Component({
+  selector: 'app-register',
+  // templateUrl: './register.component.html',
+  template: `
+  <div class="page">
+  <input type="text" #item value="default item"/> <button (click)="addListItem(item.value)">Add Item</button>
+  <p *ngIf="data.length > 10" >Your list is too long! </p>
+  <ul [ngClass]="{warning: data.length > 10}"> 
+  <li 
+  [style.color]="data.length > 7 ? 'black': 'lightpink'"
+  *ngFor="let encounter of data">{{encounter.text}}
+  <button type="button" (click)="removeListItem(encounter)">XXX</button>
+  </li>
+  </ul>
+  </div>`,
+  styles: [`
+  .warning {background: red;}
+  `],
+  providers: [JobService, ColonistService]
+})
+//The ngClass changes class when there are more than 10 items in the list
+
+
+export class RegisterComponent implements OnInit {
+
+  public newItem = 'Default Item';
+  public jobs; //Created so can be used below
+  public data = [
+    {text: "Alien Encounter 1"},
+    {text: "Alien Encounter 2"},
+    {text: "Alien Encounter 3"}
+  ]
+
+  constructor(private jobService: JobService, private colonistService: ColonistService) { }
+
+  async ngOnInit() {
+
+    // setInterval(() => {
+    //     this.data.push({ text: `Encounter ${Math.random()}` });
+    // }, 1000);
+  }
+  
+removeListItem(item) {
+  // this.data.splice(this.data.indexOf(item), 1);
+  this.data = this.data.filter(li => li !== item);
+}
+
+addListItem(item) {
+  this.data.push({ text: item });
+}
+
+
+  //   const jobs = await this.jobService.getJobs();
+  //   console.log(jobs);
+
+  //   const data = { //This is temp for testing
+  //     name: 'Hello there',
+  //     age: '50',
+  //     job_id: '2'
+  //   }
+
+  //   const newColonist = await this.colonistService.registerColonist(data);
+  //   console.log(newColonist);
+
+  //   this.jobs = await this.jobService.getJobs();
+  // }
+
+  //   async ngOnInit2() {
+
+  //     const data = { //This is temp for testing
+  //       name: 'Hello there',
+  //       age: '50',
+  //       job_id: '2'
+  //     }
+
+  //   const newColonist = await this.colonistService.registerColonist(data);
+  //   console.log(newColonist);
+  // }
+
+}

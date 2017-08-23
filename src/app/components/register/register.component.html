@@ -1,13 +1,16 @@
 <div class = "page register-page">
     <h1>Register</h1>
-    <div class="register-form">
-      <input type="text" placeholder="Full Name">
+    <form [formGroup]="registerForm" novalidate class="register-form">
+      <input type="text" placeholder="Full Name" formControlName="name">
     
-      <input type="number" placeholder="Age">
+      <input type="number" placeholder="Age" formControlName="age">
 
-      <input type="text" placeholder="Job">
-    
+      <select formControlName="job_id">
+        <option value="">Select Occupation</option>
+        <option *ngFor="let job of jobs" value="{{job.id}}">{{job.name}}</option> 
+      </select>
       <button type="submit">Check In</button>
-    </div>
+    </form>
+    {{registerForm.value | json}} <!--//transform the object into a json string-->
 
 </div>

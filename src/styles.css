@@ -43,7 +43,7 @@ p {
     align-self: center;
 }
 
-input, select{
+input, select, option{
   width: 20rem;
   padding: 0.75rem;
   margin: 3rem;
@@ -55,7 +55,7 @@ input, select{
   align-self: center;
 }
 
-input::placeholder {
+input::placeholder, select {
     color: red;
 }
 
