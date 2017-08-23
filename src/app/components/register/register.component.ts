@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
   jobs: Job[]; //Created so can be used below
 
   registerForm = new FormGroup({ //This is where we setup the form controls
-    name: new FormControl('', [Validators.required]),
-    age: new FormControl('', [Validators.required]),
+    name: new FormControl('', [Validators.required, Validators.maxLength(40), Validators.minLength(2), this.noNumbers(/[0-9]/)]),
+    age: new FormControl('', [Validators.required, Validators.max(100), Validators.min(10)]),
     job_id: new FormControl('', [Validators.required])
   });
 
@@ -34,7 +34,6 @@ export class RegisterComponent implements OnInit {
     console.log(jobs);
 
       this.jobs = jobs;
-
   }
 
 async registerColonist() { //Replicate this for encounter
@@ -46,8 +45,14 @@ async registerColonist() { //Replicate this for encounter
 
   const colonist = await this.colonistService.registerColonist(newColonist);
   console.log('colonist was saved!', colonist);
-
   console.log('Mars here I come!', this.registerForm);
+}
+
+private noNumbers(validNameRegex): ValidatorFn {
+  return(control): {[key: string]:any} => {
+    const forbiddenName = validNameRegex.test(control.value)
+    return forbiddenName ? {'forbiddenName' : {value: control.value}} : null;
+  }
 }
 
     // const data = { //This is temp for testing
