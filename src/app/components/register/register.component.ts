@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from '../../services/job'; //Grab list of jobs to autopopulate options when registering a new colonist
 import { ColonistService } from '../../services/colonist';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators, ValidatorFn} from '@angular/forms';
 import {Job} from '../../models/job';
+import {NewColonist} from '../../models/colonist';
 
 @Component({
   selector: 'app-register',
@@ -19,9 +20,9 @@ export class RegisterComponent implements OnInit {
   jobs: Job[]; //Created so can be used below
 
   registerForm = new FormGroup({ //This is where we setup the form controls
-    name: new FormControl(''),
-    age: new FormControl(''),
-    job_id: new FormControl('')
+    name: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
+    job_id: new FormControl('', [Validators.required])
   });
 
 
@@ -34,7 +35,20 @@ export class RegisterComponent implements OnInit {
 
       this.jobs = jobs;
 
+  }
 
+async registerColonist() { //Replicate this for encounter
+  const newColonist: NewColonist = {
+    name: this.registerForm.get('name').value,
+    age: this.registerForm.get('age').value,
+    job_id: this.registerForm.get('job_id').value
+  };
+
+  const colonist = await this.colonistService.registerColonist(newColonist);
+  console.log('colonist was saved!', colonist);
+
+  console.log('Mars here I come!', this.registerForm);
+}
 
     // const data = { //This is temp for testing
     //   name: 'Hello there',
@@ -44,7 +58,7 @@ export class RegisterComponent implements OnInit {
     // const newColonist = await this.colonistService.registerColonist(data);
     // console.log(newColonist);
 
-  }
+  
 
   //   async ngOnInit2() {
 

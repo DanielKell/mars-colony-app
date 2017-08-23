@@ -1,6 +1,6 @@
 <div class = "page register-page">
     <h1>Register</h1>
-    <form [formGroup]="registerForm" novalidate class="register-form">
+    <form [formGroup]="registerForm" novalidate (submit)="registerColonist()" class="register-form">
       <input type="text" placeholder="Full Name" formControlName="name">
     
       <input type="number" placeholder="Age" formControlName="age">
@@ -9,8 +9,9 @@
         <option value="">Select Occupation</option>
         <option *ngFor="let job of jobs" value="{{job.id}}">{{job.name}}</option> 
       </select>
-      <button type="submit">Check In</button>
+      <button [disabled]="registerForm.status === 'INVALID'" type="submit">Check In</button>
     </form>
     {{registerForm.value | json}} <!--//transform the object into a json string-->
+    {{registerForm.status | json}}
 
 </div>

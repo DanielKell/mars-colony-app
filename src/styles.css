@@ -53,6 +53,7 @@ input, select, option{
   border-bottom: 1px solid white;
   width: 80%;
   align-self: center;
+  color:white;
 }
 
 input::placeholder, select {
