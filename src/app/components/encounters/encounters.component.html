@@ -1,3 +1,19 @@
-<div class = "page">
-  encounters works!
+<div class = "page encounters-page">
+  <h2>
+    Recent Encounters
+  </h2>
+  <p>See an alien? Report it!</p>
+
+  <ul>
+    <li *ngFor="let encounter of encounters">
+      {{ encounter.atype }}, {{ encounter.date}}, {{ encounter.action}}
+    </li>
+  </ul>
+
+  <div class="report-link">
+    <a routerLink="/report" class="">
+      <h2>Report Encounter</h2>
+    </a>
+  </div>
+
 </div>
