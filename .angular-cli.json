@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss" // Change this to theme.scss and import all the other files into it
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

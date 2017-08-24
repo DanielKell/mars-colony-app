@@ -1,7 +1,7 @@
 
 .ng-invalid:not(form).ng-dirty:not(form), .ng-invalid:not(form).ng-dirty:not(form)::placeholder {
-  animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, .75);
-  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, .75);
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 1);
   //color: blue;
 }
 
@@ -10,3 +10,39 @@
     box-shadow: 0 0 0 35px rgba(232, 76, 61, 0);
   }
 }
+
+.register-form {
+    select {
+        width: 85%;
+        margin-bottom: 6rem;
+    }
+
+    .age-button {
+        margin-top: 0px;
+    }
+}
+
+  .register-form a {
+    display: flex;
+    text-decoration: none;
+    width: 30%;
+    align-self: center;
+
+    button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 100;
+    width: 100%;
+    }
+}
+.ng-invalid {
+    button {
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    }
+}
+

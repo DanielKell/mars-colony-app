@@ -4,6 +4,7 @@
   p {
     color: black;
     text-align: center;
+    padding-top: 1rem;
   }
   .alien-list {
     height: 60vh;
@@ -15,8 +16,13 @@
 
     li p {
         text-align: left;
-        font-size: 14px;
-        margin: 5px 0px;
+        font-size: 18px;
+        margin: 10px 0px;
+        padding-top: 0;
+    }
+
+    li :first-child {
+        font-weight: 400;
     }
   }
 }
@@ -24,5 +30,12 @@
 .encounters-bottom-half {
     .report-encounter-text {
         text-align: center;
+    }
+}
+
+.report-link {
+    margin-top: 3rem;
+    a {
+        color: transparent;
     }
 }

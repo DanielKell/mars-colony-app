@@ -11,7 +11,9 @@
 
       <textarea class="report-text-area" type="text" placeholder="Action Taken" formControlName="action"></textarea>
     
-      <button [disabled]="registerForm.status === 'INVALID'" type="submit">Submit Report</button>
+      <a routerLink="/encounters">
+        <button [disabled]="registerForm.status === 'INVALID'" type="submit">Submit Report</button>
+      </a>
           </form>
 
               {{registerForm.value | json}}
