@@ -8,7 +8,7 @@ import {NewColonist} from '../../models/colonist';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styles: [],
+  styleUrls: ['./register.component.scss'],
   providers: [JobService, ColonistService]
 })
 //The ngClass changes class when there are more than 10 items in the list

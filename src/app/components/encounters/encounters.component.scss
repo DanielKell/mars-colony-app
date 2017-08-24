@@ -1,4 +1,28 @@
-.alien-list {
-    height: 300px;
+.encounters-top-half {
+  background: white;
+  h2,
+  p {
+    color: black;
+    text-align: center;
+  }
+  .alien-list {
+    height: 60vh;
+    padding-left: 20px;
     overflow: scroll;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    li p {
+        text-align: left;
+        font-size: 14px;
+        margin: 5px 0px;
+    }
+  }
+}
+
+.encounters-bottom-half {
+    .report-encounter-text {
+        text-align: center;
+    }
 }
