@@ -1,4 +1,5 @@
 
 <!--Need to build 4 components (One for each page of the application) and 4 model data types-->
-
-<router-outlet></router-outlet>
+<div [@routerTransition]="getState(o)"> <!--Binding value of getState-->
+<router-outlet #o="outlet"></router-outlet>
+</div>
