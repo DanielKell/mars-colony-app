@@ -17,8 +17,8 @@ export class ReportComponent implements OnInit {
 aliens: Alien[];
 
   registerForm = new FormGroup({ //This is where we setup the form controls
-    date: new FormControl(''),
-    colonist_id: new FormControl(''),
+    // date: new FormControl(''),
+    // colonist_id: new FormControl(''),
     atype: new FormControl('', [Validators.required]),
     action: new FormControl('', [Validators.required])
   });
@@ -33,11 +33,12 @@ aliens: Alien[];
     this.aliens = aliens;
   }
 
-    async registerReport() { //Replicate this for encounter
+    async registerReport() { 
   const newReport: NewReport = {
-    date: '11-11-11',
-    colonist_id: this.registerForm.get('colonistId').value,
-    atype: this.registerForm.get('job_id').value,
+    date: '2011-11-11',
+    colonist_id: '3',
+    //this.registerForm.get('colonistId').value,
+    atype: this.registerForm.get('atype').value,
     action: this.registerForm.get('action').value
   };
 

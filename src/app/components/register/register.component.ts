@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
     job_id: new FormControl('', [Validators.required])
   });
 
-
   constructor(private jobService: JobService, private colonistService: ColonistService) { }
 
   async ngOnInit() {
