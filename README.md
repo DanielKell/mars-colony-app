@@ -1,28 +1,28 @@
-# MarsColonyApp
+Mars Colony App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+This is a web-based application for Earth colonists to explore Mars, built on Angular 2. The app uses GET and POST HTTP requests to do a number of things with data provided from the user: 1.) Save a new Colonist's information. 2.) Save a new Alien encounter. 3.) Fetch a list of all recent Alien encounters. 4.) Create a new Encounter report.
 
-## Development server
+Technology used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Angular 2
+* JSON
+* AJAX
+* APIs
+* JavaScript
+* Typescript
+* SASS
+* HTML
+* CSS3
+* Postman 
+* Google Fonts
+* Google Chrome
+* Google Chrome Developer Tools
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Personal learning
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. How to use the Angular 2 CLI to setup a new Angular project
+2. How to use the Postman app to make web requests, using JSON, with the server
+3. How to use Angular routers to maneuver back and forth through the app without reloading web pages
+4. Implementing ngForm and validating user input, plus preventing forms from sending invalid API requests
+5. Setting up transitions between different “pages” in the app 
