@@ -1,3 +1,4 @@
+@import '../../../styles/themes';
 
 .ng-invalid:not(form).ng-dirty:not(form), .ng-invalid:not(form).ng-dirty:not(form)::placeholder {
   animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, .75);
@@ -32,7 +33,7 @@
     background-color: transparent;
     border: none;
     font-size: 30px;
-    font-family: Roboto;
+    font-family: $primary-font;
     font-weight: 100;
     width: 100%;
     }

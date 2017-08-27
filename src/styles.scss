@@ -1,18 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/*Imports & Global Styling */
 
-@import 'reset';
+@import 'styles/reset';
+@import 'styles/themes';
+
 body {
   height: 100%;
   width: 100%;
   background: url('assets/space-background.jpg');
 }
-
+ 
 h1,
 h2,
 h3,
 p {
   color: white;
-  font-family: Roboto, Arial;
+  font-family: $primary-font;
   font-weight: 100;
   font-size: 20px;
 }
