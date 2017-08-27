@@ -1,47 +1,39 @@
-
-
 .report-page {
-    p {
-        text-align: center;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-
-        a {
-            display: flex;
-            justify-content: center;
-        }
-
-        .report-text-area {
-    width: 80%;
-    align-self: center;
-    height: 200px;
-    margin-bottom: 20px;
-}
-
-
-    }
-
-            .ng-invalid {
-            button {
-                background-color: transparent;
-                color: transparent;
-                text-decoration: none;
-                border: none;
-            }
-        }
-}
-
-  .report-form a {
+  p {
+    text-align: center;
+  }
+  form {
     display: flex;
-    text-decoration: none;
-    width: 40%;
-    align-self: center;
-    margin-top: 3rem;
-
+    flex-direction: column;
+    a {
+      display: flex;
+      justify-content: center;
+    }
+    .report-text-area {
+      width: 80%;
+      align-self: center;
+      height: 200px;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  }
+  .ng-invalid {
     button {
+      background-color: transparent;
+      color: transparent;
+      text-decoration: none;
+      border: none;
+    }
+  }
+}
+
+.report-form a {
+  display: flex;
+  text-decoration: none;
+  width: 40%;
+  align-self: center;
+  margin-top: 3rem;
+  button {
     color: white;
     background-color: transparent;
     border: none;
@@ -49,5 +41,5 @@
     font-family: Roboto;
     font-weight: 100;
     width: 100%;
-    }
+  }
 }

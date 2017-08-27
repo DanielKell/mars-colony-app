@@ -1,8 +1,6 @@
-// ng generate component /components/encounters --spec=false --inline-style=true
-
 import { Component, OnInit } from '@angular/core';
-import {ReportService} from '../../services/encounters'; //List of all encounters
-import {Report} from '../../models/report';
+import { ReportService } from '../../services/encounters';
+import { Report } from '../../models/report';
 
 @Component({
   selector: 'app-encounters',

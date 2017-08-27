@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-//This component pulls the template to load the website from
 
 import {
   trigger,
@@ -14,48 +13,48 @@ import {
 
 export const routerTransition = trigger('routerTransition', [ //linked to the name in app.component.html
 
-    transition('welcome <=> register', [
-    query (':enter, :leave', style({ position: 'fixed', width: '100%'}) //On enter and leave, do these things
-    , {optional: true}), //Only do the animation if it's successful
+  transition('welcome <=> register', [
+    query(':enter, :leave', style({ position: 'fixed', width: '100%' }) //On enter and leave, do these things
+      , { optional: true }), //Only do the animation if it's successful
     group([
       query(':enter', [
-        style({transform: 'translateY(100%)' }),
-        animate('0.5s ease-in-out', style({transform: 'translateY(0%)'}))
-      ], {optional: true}),
+        style({ transform: 'translateY(100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateY(0%)' }))
+      ], { optional: true }),
       query(':leave', [
-        style({transform: 'translateY(0%)' }),
-        animate('0.5s ease-in-out', style({transform: 'translateY(100%)'}))
-      ], {optional: true}),
+        style({ transform: 'translateY(0%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateY(100%)' }))
+      ], { optional: true }),
     ])
-  ]), 
+  ]),
 
-    transition('report => encounters', [ //Making the report page go "back" to the encounters screen
-    query (':enter, :leave', style({ position: 'fixed', width: '100%'}) //On enter and leave, do these things
-    , {optional: true}), //Only do the animation if it's successful
+  transition('report => encounters', [ //Making the report page go "back" to the encounters screen
+    query(':enter, :leave', style({ position: 'fixed', width: '100%' }) //On enter and leave, do these things
+      , { optional: true }), //Only do the animation if it's successful
     group([
       query(':enter', [
-        style({transform: 'translateX(-100%)' }),
-        animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))
-      ], {optional: true}),
+        style({ transform: 'translateX(-100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+      ], { optional: true }),
       query(':leave', [
-        style({transform: 'translateX(0%)' }),
-        animate('0.5s ease-in-out', style({transform: 'translateX(100%)'}))
-      ], {optional: true}),
+        style({ transform: 'translateX(0%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
+      ], { optional: true }),
     ])
-  ]), 
+  ]),
 
   transition('* <=> *', [
-    query (':enter, :leave', style({ position: 'fixed', width: '100%'}) //On enter and leave, do these things
-    , {optional: true}), //Only do the animation if it's successful
+    query(':enter, :leave', style({ position: 'fixed', width: '100%' }) //On enter and leave, do these things
+      , { optional: true }), //Only do the animation if it's successful
     group([
       query(':enter', [
-        style({transform: 'translateX(100%)' }),
-        animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))
-      ], {optional: true}),
+        style({ transform: 'translateX(100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+      ], { optional: true }),
       query(':leave', [
-        style({transform: 'translateX(0%)' }),
-        animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))
-      ], {optional: true}),
+        style({ transform: 'translateX(0%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
+      ], { optional: true }),
     ])
   ]) //Can replace * to a specific route, but this creates the animation on ALL transitions
 

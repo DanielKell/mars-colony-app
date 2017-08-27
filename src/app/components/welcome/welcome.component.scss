@@ -17,23 +17,22 @@
 }
 
 //Creating rotating planet on front page
-
 @-webkit-keyframes planet-rotation {
-    from {
-        background-position: 0% 0%;
-    }
-    to {
-        background-position: -200% 0%;
-    }
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: -200% 0%;
+  }
 }
+
 @keyframes planet-rotation {
-  
-    from {
-        background-position: 0% 0%;
-    }
-    to {
-        background-position: -200% 0%;
-    }
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: -200% 0%;
+  }
 }
 
 .container {
@@ -41,24 +40,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .planet-image {
-     width: 25vw;
-     height: 25vw;
-     max-width: 250px;
-     max-height: 250px;
-     border-radius: 50%;
-     position: relative;
-     background: #303030 url('../../../assets/mars.png') repeat-x;
-    // background: #303030 url('../../../assets/Mackenzi_Big.jpg');
-     background-size: cover;
-     -webkit-animation: planet-rotation 15s linear infinite, pulse 1.5s infinite cubic-bezier(0.66, 0, 0, .75);
-     box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
-     cursor: pointer;
-
-     
+  width: 25vw;
+  height: 25vw;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+  position: relative;
+  background: #303030 url('../../../assets/mars.png') repeat-x;
+  background-size: cover;
+  -webkit-animation: planet-rotation 15s linear infinite, pulse 1.5s infinite cubic-bezier(0.66, 0, 0, .75);
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  cursor: pointer;
 }
 
 @keyframes pulse {
@@ -68,24 +63,21 @@
 }
 
 .planet-image:after {
-    position: absolute;
-    content: '';
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    
-    height: 100%;
-    border-radius: 50%;
-    background-image:
-        -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.6), transparent),
-        linear-gradient(to right, rgba(255,240,220,0.5) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.64) 60%, rgba(0,0,0,1) 100%);
-    box-shadow: inset 10px 0 30px rgba(255,240,220,0.4);
+  position: absolute;
+  content: '';
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  height: 100%;
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255, 240, 230, .6), transparent), linear-gradient(to right, rgba(255, 240, 220, 0.5) 12%, rgba(255, 240, 220, 0) 40%, rgba(0, 0, 0, 0.64) 60%, rgba(0, 0, 0, 1) 100%);
+  box-shadow: inset 10px 0 30px rgba(255, 240, 220, 0.4);
 }
 
 .planet-image:before {
-                content: '';
-                position: absolute;
+  content: '';
+  position: absolute;
   top: -4px;
   left: -4px;
   right: -4px;

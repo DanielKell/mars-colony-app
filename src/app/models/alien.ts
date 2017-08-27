@@ -1,5 +1,3 @@
-// ng generate interface /models/alien
-
 export interface Alien {
             id: number;
             type: string;

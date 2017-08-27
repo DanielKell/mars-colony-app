@@ -1,30 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {AlienService} from '../../services/alien';
-import {ReportService} from '../../services/encounters';
-
-import {FormControl, FormGroup, Validators, ValidatorFn} from '@angular/forms';
-import {NewReport, Report} from '../../models/report';
-import {Alien} from '../../models/alien'
+import { AlienService } from '../../services/alien';
+import { ReportService } from '../../services/encounters';
+import { FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+import { NewReport, Report } from '../../models/report';
+import { Alien } from '../../models/alien';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss'],
-  providers: [AlienService, ReportService] //This service is only injectable into this class
+  providers: [AlienService, ReportService] 
 })
 export class ReportComponent implements OnInit {
 
-aliens: Alien[];
+  aliens: Alien[];
 
-  registerForm = new FormGroup({ //This is where we setup the form controls
-    // date: new FormControl(''),
-    // colonist_id: new FormControl(''),
+  registerForm = new FormGroup({ 
     atype: new FormControl('', [Validators.required]),
     action: new FormControl('', [Validators.required])
   });
 
 
-  constructor(private alienService: AlienService, private reportService: ReportService) { }
+  constructor(private alienService: AlienService, private reportService: ReportService, private router: Router) { }
 
   async ngOnInit() {
     const aliens = await this.alienService.getAliens();
@@ -33,28 +31,17 @@ aliens: Alien[];
     this.aliens = aliens;
   }
 
-    async registerReport() { 
-  const newReport: NewReport = {
-    date: '2011-11-11',
-    colonist_id: '3',
-    //this.registerForm.get('colonistId').value,
-    atype: this.registerForm.get('atype').value,
-    action: this.registerForm.get('action').value
-  };
+  async registerReport() {
+    const newReport: NewReport = {
+      date: '2011-11-11',
+      colonist_id: '3',
+      atype: this.registerForm.get('atype').value,
+      action: this.registerForm.get('action').value
+    };
 
-  const report = await this.reportService.postEncounters(newReport);
-  console.log('colonist was saved!', report);
-}
-
-
-    //     const data = { //This is temp for testing
-    //    date: '2011-10-10',
-    //    colonist_id: '3',
-    //       atype: 'spider',
-    //       action: "ham"
-    //   }
-
-    //  const newEncounter = await this.reportService.postEncounters(data);
-    //  console.log(newEncounter);
+    const report = await this.reportService.postEncounters(newReport);
+    console.log('colonist was saved!', report);
+    this.router.navigate(['encounters']);
+  }
 
 }
