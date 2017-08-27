@@ -44,7 +44,6 @@ aliens: Alien[];
 
   const report = await this.reportService.postEncounters(newReport);
   console.log('colonist was saved!', report);
-  console.log('Mars here I come!', this.registerForm);
 }
 
 

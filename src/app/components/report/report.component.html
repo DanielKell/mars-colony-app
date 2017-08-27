@@ -1,5 +1,6 @@
 <div class = "page report-page">
     <h1>Report Encounter</h1>
+    <p>Safety on Mars is your responsibility</p>
     <div class="report-form">
     <form [formGroup]="registerForm" novalidate (submit)="registerReport()" class="register-report">
       <!--<input type="text" placeholder="Select alien type">-->
@@ -15,9 +16,9 @@
         <button [disabled]="registerForm.status === 'INVALID'" type="submit">Submit Report</button>
       </a>
           </form>
-
+<!--
               {{registerForm.value | json}}
-    {{registerForm.status | json}}
+    {{registerForm.status | json}}-->
     </div>
 
 </div>

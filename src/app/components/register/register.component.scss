@@ -2,7 +2,6 @@
 .ng-invalid:not(form).ng-dirty:not(form), .ng-invalid:not(form).ng-dirty:not(form)::placeholder {
   animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, .75);
   box-shadow: 0 0 0 0 rgba(232, 76, 61, 1);
-  //color: blue;
 }
 
 @keyframes pulse { 
