@@ -26,7 +26,6 @@ export class ReportComponent implements OnInit {
 
   async ngOnInit() {
     const aliens = await this.alienService.getAliens();
-    console.log(aliens);
 
     this.aliens = aliens;
   }
@@ -40,7 +39,6 @@ export class ReportComponent implements OnInit {
     };
 
     const report = await this.reportService.postEncounters(newReport);
-    console.log('colonist was saved!', report);
     this.router.navigate(['encounters']);
   }
 

@@ -24,7 +24,8 @@ export class ColonistService {
     }
 
     handleError(error) {
-        console.log(error);
+        console.error('An error occured', error);
+        return Promise.reject(error.message || error);
     }
 }
 

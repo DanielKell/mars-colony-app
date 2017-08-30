@@ -9,7 +9,7 @@ Technology used
 * AJAX
 * APIs
 * JavaScript
-* Typescript
+* TypeScript
 * SASS
 * HTML
 * CSS3
